@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-item-sliding>
+        <ion-item-options side="start">
+            <ion-item-option color="danger" expandable>
+                Delete
+            </ion-item-option>
+        </ion-item-options>
+
+        <ion-item>
+            <ion-label>mat-table</ion-label>
+        </ion-item>
+
+        <ion-item-options side="end">
+            <ion-item-option color="tertiary" expandable>
+                Archive
+            </ion-item-option>
+        </ion-item-options>
+    </ion-item-sliding>
+</ion-header>
+
+<ion-content>
+    <div class="box">
+        <div class="one">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+                <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+                <!-- Position Column -->
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> No. </th>
+
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+
+                </ng-container>
+
+
+                <!-- Name Column -->
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name </th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+
+
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+        <div class="list">
+            <ion-list>
+                <ion-item-sliding>
+                    <ion-item-options side="start">
+                        <ion-item-option color="danger" expandable>
+                            Delete
+                        </ion-item-option>
+                    </ion-item-options>
+
+                    <ion-item>
+                        <ion-label>Expandable Options</ion-label>
+                    </ion-item>
+
+                    <ion-item-options side="end">
+                        <ion-item-option color="tertiary" expandable>
+                            Archive
+                        </ion-item-option>
+                    </ion-item-options>
+                </ion-item-sliding>
+            </ion-list>
+        </div>
+    </div>
+</ion-content>
+
+
+
+<!--<ion-item-sliding>
+    <ion-item-options side="start">
+      <ion-item-option color="danger" expandable>
+        Delete
+      </ion-item-option>
+    </ion-item-options>
+
+    <ion-item>
+      <ion-label>Expandable Options</ion-label>
+    </ion-item>
+
+    <ion-item-options side="end">
+      <ion-item-option color="tertiary" expandable>
+        Archive
+      </ion-item-option>
+    </ion-item-options>
+  </ion-item-sliding>-->
